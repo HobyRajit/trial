@@ -1,0 +1,28 @@
+<mat-card class="news-thumbnail" >
+    <mat-card-header>
+      <mat-card-title class="news-title">
+          {{anews?.title}}
+      </mat-card-title>
+      <mat-card-subtitle>
+          {{anews?.author}}
+      </mat-card-subtitle>
+    </mat-card-header>
+    <img class="news-image" mat-card-image [src]="anews?.urlToImage" [alt]="anews?.title"> 
+    <mat-card-content>
+      {{anews?.description}}
+    </mat-card-content>
+    <mat-card-actions class="news-action">
+      <button *ngIf="!useWatchListApi" mat-button (click)="addToWatchList()" color="primary">
+        
+        AddToWatchList
+      </button>
+      <button *ngIf="useWatchListApi" mat-button (click)="deleteFromWatchList()" color="primary">
+        DeleteFromWatchList
+
+      </button>
+      <button *ngIf="useWatchListApi" mat-button (click)="update('update')" color="primary">
+      Update
+
+      </button>
+    </mat-card-actions>
+</mat-card>

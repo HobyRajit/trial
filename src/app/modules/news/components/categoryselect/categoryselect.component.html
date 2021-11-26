@@ -1,0 +1,11 @@
+<form>
+  <mat-form-field>
+      <mat-select placeholder="Select category" (change)="fetchNews($event.value)">
+      <mat-option *ngFor="let cat of categories" [value]="cat.value">
+          {{cat.showValue}}
+
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>
+<news-container [news]="news"></news-container>

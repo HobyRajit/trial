@@ -1,0 +1,35 @@
+<form class="register-form" #registerform="ngForm" [style.font.px]="20">
+  <div class="register-block">
+      <div class="row">
+          <h3>Register User</h3>
+      </div>
+      <div class="row">
+          <mat-form-field class="register-input-full-width">
+              <input id="firstname" matInput placeholder="First Name" [(ngModel)]="newUser.firstName" name="firstname">
+         </mat-form-field>
+         <mat-form-field class="register-input-full-width">
+              <input id="lastname" matInput placeholder="Last Name" [(ngModel)]="newUser.lastName" name="lastname">
+         </mat-form-field>
+         <mat-form-field class="register-input-full-width">
+          <input id="userid" matInput placeholder="User Id" [(ngModel)]="newUser.userId" name="userid">
+          </mat-form-field>
+          <mat-form-field class="register-input-full-width">
+          <input id="password" matInput placeholder="password Name" [(ngModel)]="newUser.password"  name="password">
+          </mat-form-field>
+      </div>
+      <div class="row">
+      <mat-checkbox class="register-input-full-width" [checked]="newUser.admin" #admin (change)="checkAdmin(admin._checked)">Admin
+            
+      </mat-checkbox>
+     </div>
+      <div class="row">
+          <button class="register-user" mat-raised-button color="primary" type="submit" (click)="registerUser()">
+              Register
+          </button>
+          <button mat-raised-button color="primary" (click)="resetInput()">
+              Clear
+          </button>
+      </div>
+  </div>
+     
+  </form>
